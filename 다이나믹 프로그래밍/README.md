@@ -1,2 +1,4 @@
-# 백준 알고리즘 문제풀이
-코딩 테스트를 대비를 위한 백준 알고리즘 문제풀이
+# Baekjoon Algorithm - Solution for problems
+
+## Algorithms
+* 다이나믹 프로그래밍
