@@ -4,6 +4,7 @@
 다리를 최대한 많이 지으려고 하기 때문에 서쪽의 사이트 개수만큼 (N개) 다리를 지으려고 한다. 
 다리끼리는 서로 겹쳐질 수 없다고 할 때, 다리를 최대로 지을 수 있는 경우의 수를 구하는 프로그램을 작성하라.
 '''
+
 '''
 # 수학 
 import sys, math
@@ -15,6 +16,7 @@ for _ in range(T) :
     if N >= M : print(comb(N,M))
     else : print(comb(M,N))
 '''
+
 # Top-Down Dynamic Programming
 T = int(input())
 cache = [[-1] * 30 for _ in range(30)]
