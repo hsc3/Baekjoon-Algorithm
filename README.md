@@ -2,7 +2,7 @@
 * 구현
 
 * 그래프 탐색
-   * DFS & BFS
+   * BFS & DFS
    * Floyd-Warshall
 
 * 그리디 알고리즘
