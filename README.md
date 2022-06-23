@@ -2,7 +2,7 @@
 * 구현
 
 * 그래프 탐색
-   * DFS, BFS
+   * DFS & BFS
    * Floyd-Warshall
 
 * 그리디 알고리즘
@@ -14,8 +14,9 @@
 * 브루트포스
 
 * 자료구조
-   * 덱
-   * 스택
-   * 큐
+   * Deque
+   * Queue
+   * Set
+   * Stack
   
 * 정렬
