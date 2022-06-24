@@ -15,7 +15,6 @@
 
 * 자료구조
    * Deque
-   * Dictionary
    * Queue
    * Set
    * Stack
