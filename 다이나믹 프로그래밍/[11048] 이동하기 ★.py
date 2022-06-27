@@ -1,5 +1,5 @@
 '''
-[11048] 이동하기 | Silver 1 | Dynamic Programming
+[11048] 이동하기 / Silver 1 / 다이나믹 프로그래밍
 준규가 (N, M)으로 이동할 때, 가져올 수 있는 사탕 개수의 최댓값을 구하시오.
 '''
 import sys; input = sys.stdin.readline
