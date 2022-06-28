@@ -12,4 +12,4 @@ res = []
 for _ in range(int(input())) :
     res.append("even") if int(input()) % 2 == 0 else res.append("odd")
 
-print(*res, sep='\n')
+print(*res, sep='\n') 
