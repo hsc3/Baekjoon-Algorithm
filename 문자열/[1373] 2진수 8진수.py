@@ -2,6 +2,7 @@
 [1373] 2진수 8진수 / Bronze 1 / 문자열, 수학
 2진수가 주어졌을 때, 8진수로 변환하는 프로그램을 작성하시오.
 '''
+
 import sys
 input = sys.stdin.readline
 from collections import deque
