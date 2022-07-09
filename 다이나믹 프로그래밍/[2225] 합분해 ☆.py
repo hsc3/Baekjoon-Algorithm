@@ -1,15 +1,18 @@
 '''
-[2225] 합분해 | https://www.acmicpc.net/problem/2225
+[2225] 합분해 / Gold 5 / 다이나믹 프로그래밍
 0부터 N까지의 정수 K개를 더해서 그 합이 N이 되는 경우의 수를 구하는 프로그램을 작성하시오.
 '''
+
 # 경우의 수를 누적해나간다.
 N, K = map(int, input().split())
 dp = [[0 for _ in range(K+1)] for _ in range(N+1)]
 dp[0][0] = 1
+
 for i in range(N+1) : # 가치
     for j in range(1, K+1) : # 카드 수 (1개일 때부터 고려)
         for p in range(i+1) :
             dp[i][j] += dp[i-p][j-1] % 1000000000
+            
 print(dp[N][K] % 1000000000)
 
 '''
