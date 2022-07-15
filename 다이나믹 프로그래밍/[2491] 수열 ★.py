@@ -9,26 +9,24 @@
 n = int(input())
 numbers = list(map(int, input().split()))
 
-up_same = [1 for _ in range(n)] # 같거나 증가
-down_same = [1 for _ in range(n)] # 같거나 감소
+# 오름차순의 경우와 내림차순의 경우를 각각 저장
+ascending = [1 for _ in range(n)] # 같거나 증가
+descending = [1 for _ in range(n)] # 같거나 감소
 
-pre = numbers[0]
+for i in range(1, n):
+  # 오름차순 여부
+  if numbers[i-1] <= numbers[i]: 
+    ascending[i] += ascending[i-1]
+  else: 
+    ascending[i] = 1
 
-for index in range(1, n):
-  if pre <= numbers[index]: # 이전 숫자보다 같거나 큰 경우
-    up_same[index] += up_same[index - 1]
-  else: # 이전 숫자보다 작을 경우
-    up_same[index] = 1
+  # 내림차순 여부
+  if numbers[i-1] >= numbers[i]:
+    descending[i] += descending[i-1]
+  else: 
+    descending[i] = 1
 
-  if pre >= numbers[index]: # 이전 숫자보다 작거나 같을 경우
-    down_same[index] += down_same[index - 1]
-  else: # 이전 숫자보다 클 경우
-    down_same[index] = 1
-
-  pre = numbers[index]
-
-print(max(max(up_same), max(down_same)))
-
+print(max(max(ascending), max(descending)))
 
 # import sys
 # input = sys.stdin.readline
