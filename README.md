@@ -10,6 +10,7 @@
 #### 브루트포스
 #### 자료구조
    * Deque
+   * Heap
    * Map
    * Queue
    * Set
