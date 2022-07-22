@@ -84,7 +84,3 @@ if ans!=0:
     for i in range(n):
         print(map[i])
 '''
-
-'''
-
-'''
