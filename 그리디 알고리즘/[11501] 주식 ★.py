@@ -1,4 +1,4 @@
-# [11501] 주식 | Silver 2 | 그리디 알고리즘
+# [11501] 주식 | Silver 2 | 그리디
 '''
 홍준이는 요즘 주식에 빠져있다. 그는 미래를 내다보는 눈이 뛰어나, 날 별로 주가를 예상하고 언제나 그게 맞아떨어진다. 매일 그는 아래 세 가지 중 한 행동을 한다.
 - 주식 하나를 산다.
@@ -10,42 +10,47 @@
 import sys
 input = sys.stdin.readline
 
-answer = []
-for _ in range(int(input())):
-    N = int(input())
-    stock = list(map(int, input().split()))[::-1] # 뒤에서부터 접근
-    profit = 0 # 총 이익
+def Simulator(N, stock):
+    profit = 0  # 총 이익
 
-    highest_price = stock[0] # 최대 주가
-    cursor = 1 # 주식을 사는 시점
-    while cursor < N:
+    highest_price = stock[N - 1]  # 최대 주가
+    cursor = N - 2  # 주식을 사는 시점
+
+    while cursor >= 0:
         # 더 높은 주가를 기록하는 날이 있는 경우 -> 최대 주가를 갱신
         if stock[cursor] > highest_price:
             highest_price = stock[cursor]
         # highest_price가 가장 높은 주가인 경우 -> 해당 주가를 가지고 cursor 시점의 이익을 계산
         else:
             profit += (highest_price - stock[cursor])
-        cursor += 1
+        cursor -= 1
+    return profit
 
-    answer.append(profit)
+answer = []
+for _ in range(int(input())):
+    N = int(input())
+    stock = list(map(int, input().split()))
+    answer.append(Simulator(N, stock))
 
 print(*answer, sep='\n')
 
-# def Simulator(stock):
+# def Simulator(N, stock):
 #     profit = 0
-#     while stock:
-#         highest_price = max(stock) # 최대 주가
-#         highest_day = stock.index(highest_price) # 최대 주가를 기록한 날
 #
-#         profit += (highest_price * highest_day - sum(stock[:highest_day]))
-#         stock = stock[highest_day+1:] # 최대 주가를 기록한 날까지 데이터 제거
-#
+#     for day in range(N-1):
+#         highest_price = max(stock[day+1:]) # 이후의 주식의 최대가
+#         if stock[day] < highest_price: # 이 날(day) 주식을 사면, 이득을 볼 수 있는 경우
+#             print("{}일 기준 최대 주가는 {}이고, 그로 인한 수익은 {}입니다.".format(day+1, highest_price, highest_price-stock[day]))
+#             profit += (highest_price - stock[day]) # 최대가일 때, 해당 주식을 팔아 수익을 본다.
+#         else:
+#             print("{}일 기준으로 수익을 볼 수 없으므로, 주식을 사지 않습니다.".format(day+1))
 #     return profit
 #
 # answer = []
 # for _ in range(int(input())):
 #     N = int(input())
 #     stock = list(map(int, input().split()))
-#     answer.append(Simulator(stock))
+#
+#     answer.append(Simulator(N, stock))
 #
 # print(*answer, sep='\n')
