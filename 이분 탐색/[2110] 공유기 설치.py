@@ -8,7 +8,7 @@ C개의 공유기를 N개의 집에 적당히 설치해서, 가장 인접한 두
 import sys
 input = sys.stdin.readline
 
-# 두 집 사이의 거리가 distance 이상이면 공유기를 설치, cnt개 이상 설치할 수 있는지를 판별
+# 두 집 사이의 거리가 distance 이상이면 공유기를 설치, C개 이상 설치할 수 있는지를 판별
 def CheckDistance(distance):
     cnt = 1 # 공유기 설치 대수
     curr = 0 # 현재 집의 좌표
