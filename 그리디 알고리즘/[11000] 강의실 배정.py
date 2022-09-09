@@ -10,18 +10,17 @@ from heapq import heappush, heappop
 input = sys.stdin.readline
 
 seminar = []
-# 가장 빨리 시작하고, 수업 시간이 짧은 수업을 선택한다.
 N = int(input())
 for _ in range(N):
     seminar.append(list(map(int, input().split())))
 
-seminar.sort(key=lambda x : (x[0], x[1] - x[0]))
+seminar.sort(key=lambda x : (x[0], x[1] - x[0])) # 가장 빨리 시작하고, 수업 시간이 짧은 수업을 선택하도록 정렬
 room = [] # 강의실 별 수업이 끝나는 시간을 저장
 
 heappush(room, seminar[0][1]) # 첫 번째 강의의 끝나는 시간을 추가한다.
 for i in range(1, N):
-    if room[0] <= seminar[i][0]: # 해당 강의실에서 강의를 진행할 수 있는 경우 (가장 빨리 끝나는 강의실 시간 <= i번째 강의 시작 시간)
-        heappop(room) # 기존 강의의 끝나는 시간을 꺼낸다. (강의실 - 1)
-    heappush(room, seminar[i][1]) # i번째 수업 끝나는 시간을 추가한다. (강의실 + 1)
+    if room[0] <= seminar[i][0]: # 해당 강의실에서 강의를 진행할 수 있는 경우 (가장 빨리 끝나는 강의실의 시간 <= i번째 강의의 시작 시간)
+        heappop(room) # 해당 강의실에서의 기존 강의의 끝나는 시간을 꺼낸다. (강의실 - 1)
+    heappush(room, seminar[i][1]) # i번째 수업의 끝나는 시간을 추가한다. (강의실 + 1)
 
 print(len(room))
