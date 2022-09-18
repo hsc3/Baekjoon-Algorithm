@@ -1,4 +1,4 @@
-## Baekjoon Alorithm Problem-solving
+## Baekjoon Algorithm Problem-solving
 
 ##### 1. 구현
 ##### 2. 그래프 탐색
