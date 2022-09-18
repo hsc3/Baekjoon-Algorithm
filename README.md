@@ -1,4 +1,4 @@
-## 코딩 테스트 대비를 위한 백준 알고리즘 문제풀이
+## Baekjoon Alorithm Problem-solving
 
 ##### 1. 구현
 ##### 2. 그래프 탐색
